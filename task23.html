@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style23.css">
+  <title>Document</title>
+</head>
+<body>
+  <form id="contact" method="post" action="">
+    <div>
+      <label for="contact_name">Name:</label>
+      <input type="text" id="contact_name" name="name" required>
+      <span class="error error_show">This field is required</span>
+    </div>
+    <div>
+      <label for="contact_email">Email:</label>
+      <input type="email" id="contact_email" name="email" required>
+      <span class="error error_show">A valid email address is required</span>
+    </div>
+    <div>
+      <label for="contact_website">Website:</label>
+      <input type="url" id="contact_website" name="website" required>
+      <span class="error error_show">A valid website address is required</span>
+    </div>
+    <div>
+      <label for="contact_message">Message:</label>
+      <textarea id="contact_message" name="message" required></textarea>
+      <span class="error error_show">This field is required</span>
+    </div>
+    <div id="contact_submit">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    function validateForm() {
+      const requiredFields = document.querySelectorAll('input[required], textarea[required]');
+      for (const field of requiredFields) {
+        if (field.value === '') {
+          field.nextElementSibling.classList.add('error_show');
+        } else {
+          field.nextElementSibling.classList.remove('error_show');
+        }
+      }
+      if (document.querySelectorAll('.error_show').length > 0) {
+        event.preventDefault();
+      }
+    }
+    const contactSubmitButton = document.querySelector('#contact_submit button');
+    contactSubmitButton.addEventListener('click', validateForm);
+    document.getElementById('contact').addEventListener('submit', function() {
+      if (!event.defaultPrevented) {
+        alert('Your form has been submitted successfully!');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.container {
+    width: 500px;
+    margin: 0 auto;
+    }
+    
+    .header {
+    text-align: center;
+    }
+    
+    .main {
+    padding: 20px;
+    }
+    
+    .main form {
+    margin-bottom: 10px;
+    }
+    
+    .main input[type="submit"] {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    }
+    
+    .main .remember-me {
+    margin-bottom: 10px;
+    }
+    
+    .main .remember-me input[type="checkbox"] {
+    vertical-align: middle;
+    }
+    
+    .main .remember-me label {
+    margin-left: 5px;
+    }
+    
+    .main a {
+    color: #0095f6;
+    }
+    
+    .footer {
+    text-align: center;
+    margin-top: 20px;
+    }
+    
+    .footer a {
+    color: #0095f6;
+    }
+    

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="button" onClick="date1()" Value="show date" />
+        <input type="button" onClick="time2()" Value="show time" />
+    </form>
+    <span id = "result"></span>
+    <script>
+        function date1(){
+            const date = new Date();
+            let day = date.getDate();
+            var month = date.toLocaleString('default', { month: 'long' });
+            let year = date.getFullYear();
+            let currentDate = `${day}-${month}-${year}`;
+            document.getElementById("result").innerHTML=currentDate;
+        }
+        function time2(){
+            const date = new Date();
+            document.getElementById("result").innerHTML=date;
+        }
+    </script>
+</body>
+</html>
